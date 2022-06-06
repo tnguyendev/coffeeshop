@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <title>The Grind</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/b1767921c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="profilestyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa solid fa-arrow-down"></span>order</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+    
+    <div class="row">
+        <!-- LOCAL INFORMATION -->
+        <div>
+          <section>
+            <% if (user.local.email) { %>
+              <p>
+                <strong>Barista Name</strong>: <%= user.local.email %><br> 
+            </p>
+        <% } else { %>
+            <a href="/connect/local" class="btn btn-default">Connect Local</a>
+        <% } %>
+          </section>
+        
+        </div>
+        <div class="col-sm-6" id ="orders">
+          <h3 class ="general">Orders to Complete</h3>
+           <ul class="orders">
+            <% for(let i=0; i<orders.length; i++) {%>
+             
+                <% if(orders[i].completed===false){ %>
+                <li class="message">  
+                  <span id="displayUrl"><%= orders[i].coffeeChoice %></span>
+                  <span id="displayUrl"><%= orders[i].coffeeSize %></span>
+                  <span id="displayUrl"><%= orders[i].coffeeFlavor %></span>
+                  <span id="displayUrl"><%= orders[i].coffeeCream %></span>
+                  <span id="displayUrl"><%= orders[i].coffeeSugar %></span>
+                  <span id="bookCover"><%= orders[i].coffeeInstructions %></span>
+                  <span id="displayUrl"><%= orders[i].customerName %></span>
+                  <span id="displayUrl" hidden><%= orders[i]._id %></span>
+                  <span><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+                  <span><i class="fa fa-ban" aria-hidden="true"></i></span>
+                </li>
+            <% } %>
+            <% } %>
+
+            </ul>
+            </div>
+
+          <div class="col-sm-6" id="orders">
+            <h3 class ="liked">Completed Orders</h3>
+            <ul class="orders">
+              <% for(let i=0; i < orders.length; i++){%>
+                <% if(orders[i].completed ===true) { %>
+                  <li class="message">
+                    <span>Coffee Choice : </span><span id="displayUrl"><%= orders[i].coffeeChoice %></span>
+                    <span>Coffee Size : </span><span id="displayUrl"><%= orders[i].coffeeSize %></span>
+                    <span>Coffee Flavor : </span><span id="displayUrl"><%= orders[i].coffeeFlavor %></span>
+                    <span>Coffee Cream : </span><span id="displayUrl"><%= orders[i].coffeeCream %></span>
+                    <span>Coffee Sugar : </span><span id="displayUrl"><%= orders[i].coffeeSugar %></span>
+                    <span>Coffee Instructions : </span><span id="bookCover"><%= orders[i].coffeeInstructions %></span>
+                    <span>Customer Name : </span><span id="displayUrl"> <%= orders[i].customerName %></span>
+                    <span>Completed By :</span><span id="displayBarista" value ="baristaName"> <%= orders[i].baristaName %></span>
+                    <!-- <span><i class="fa fa-ban" aria-hidden="true"></i></span> -->
+                  </li>
+                  <% } %>
+                <% } %>
+            </ul>
+          </div>
+          </div>
+          <!-- <div class="col-sm-6" id="orders">
+            <ul class="orders">
+              <% for(var j=0; j<allUsers.length; j++) {%> 
+              <% console.log(orders)%> 
+              <% if (orders.filter (x => x.baristaName === allUsers[j].local.email).length > 0) {%> 
+                <h3 class ="liked"> <%= allUsers[j].local.email %>'s Orders</h3>   
+                <% } %>
+                <% for(let i=0; i<orders.length; i++) {%>
+                <% if(orders[i].completed===true && allUsers[j].local.email=== orders[i].baristaName){ %>
+                   
+                              <li>Coffee: <%=orders[i].coffeeChoice %></li>
+                              <li>Size: <%=orders[i].coffeeSize %></li>
+                              <li>Flavor: <%=orders[i].coffeeFlavor %></li>
+                              <li>Cream: <%=orders[i].coffeeCream %></li>
+                              <li>Sugar: <%=orders[i].coffeeSugar %></li>
+                              <li>Coffee Instructions: <%=orders[i].coffeeInstructions %></li>
+                              <li>Customer: <%=orders[i].customerName %></li>
+                              <li>Barista: <%=orders[i].baristaName %></li>
+                  <% } %>
+              <% } %>  
+              <% } %>
+          </ul>
+        </div> -->
+</div>
+<script src="main.js"></script>
+</body>
+</html>

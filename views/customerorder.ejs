@@ -1,0 +1,67 @@
+<!-- THIS WOULD BE THE MAIN PAGE FOR CUSTOMER ORDERS -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Grind</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="customerside">
+      <h1>Customer? Place an order below.</h1>
+        <form action="/savedToDatabase" method="POST"> 
+            <select name="coffeeChoice" id="">
+                <option value="Iced Coffee">Iced Coffee</option>
+                <option value="Hot Coffee">Hot Coffee</option>
+                <option value="Latte">Latte</option>
+                <option value="Americano">Americano</option>
+                <option value="Frappe">Frappe</option>
+                <option value="Expresso">Expresso</option>
+                <option value="Cappucino">Cappucino</option>
+                <option value="Macchiato">Macchiato</option>
+            </select>
+            <select name="coffeeSize" id="">
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+              <option value="Extra Large">Extra Large</option>
+            </select>
+            <select name="coffeeFlavor" id="">
+              <option value="No Flavor">No Flavor</option>
+              <option value="Vanilla">Vanilla</option>
+              <option value="Hazelnut">Hazelnut</option>
+              <option value="Blueberry">Blueberry</option>
+              <option value="Butter Pecan">Butter Pecan</option>
+              <option value="Caramel">Caramel</option>
+              <option value="Toasted Almond">Toasted Almond</option>
+              <option value="Mocha">Mocha</option>
+            </select>
+            <select name="coffeeCream" id="">
+              <option value="No Cream">No Cream</option>
+              <option value="Light Cream">Light Cream</option>
+              <option value="Regular Cream">Regular Cream</option>
+              <option value="Extra Cream">Extra Cream</option>
+            </select>
+            <select name="coffeeSugar" id="">
+              <option value="No Sugar">No Sugar</option>
+              <option value="Light Sugar">Light Sugar</option>
+              <option value="Regular Sugar">Regular Sugar</option>
+              <option value="Extra Sugar">Extra Sugar</option>
+            </select>
+            <input class="special" type="text" placeholder="Special Instructions" name="coffeeInstructions">  
+            <input class="customer" type="text" placeholder="Customer Name" name="customerName">
+            <button type="submit">SUBMIT</button>
+          </form>
+        </div>
+        <div class="baristaside">
+          <h2>Are you a Barista?</h2>
+          <h3> Login <a class="login" href="/login">HERE</a></h3>
+        </div>
+    </div>
+  </body>
+</html>

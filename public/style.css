@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  font-family: 'roboto';
+  font-weight: bold;
+}
+
+
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-image: url(.//img/coffeebg.jpg);
+  background-size: cover;
+  font-size: 20px;
+}
+
+a{
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+}
+
+h1 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+/* .container {
+  /* display: flex;
+  flex-direction: column; */
+  /* border: 1px solid white; */
+
+form {
+  display: flex;
+  flex-direction: column;
+  word-wrap: normal;
+  justify-content: center;
+  align-items: center;
+}
+
+form select {
+  width: 25%;
+  height: 30px;
+}
+
+.special {
+  width: 25%;
+  height: 50px;
+  word-wrap: normal;
+}
+
+.customer {
+  width: 25%;
+  height: 30px;
+  word-wrap: normal;
+}
+
+button {
+  width: 25%;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+h2, h3 {
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.customerside {
+  width: 30%;
+  /* border: 1px solid red; */
+  float: left;
+  border-right: 7px solid white;
+}
+
+.baristaside {
+  width: 20%;
+  /* border: 1px solid blue; */
+  float: left;
+}
+
+
+/* .jumbotron{
+  background-color: rgba(255, 255, 255, .1);
+} */
